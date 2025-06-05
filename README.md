@@ -48,9 +48,6 @@ docker-compose up --build -d
 Accessing the Application
 Frontend Dashboard: http://44.211.214.10:3000
 
-![Alt text](images/frontend.png)
-
-
 Development Backend: http://44.211.214.10:3000/dev
 
 Production Backend: http://44.211.214.10:3000/prod
@@ -61,15 +58,4 @@ Development: http://44.211.214.10:3001
 
 Production: http://44.211.214.10t:3002
 
-## Test Images
 
-### Backend Environments
-![Backend Development](images/backend-dev.png)
-![Backend Production](images/backend-prod.png)
-
-### Frontend Environments
-![Frontend Development](images/frontend-dev.png)
-![Frontend Production](images/frontend-prod.png)
-
-### Frontend Default
-![Frontend](images/frontend.png)
