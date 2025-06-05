@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-dev
+      - backend-prod
+    restart: unless-stopped
+
+  backend-dev:
+    build: ./backend/dev
+    ports:
+      - "3001:3001"
+    environment:
+      - FLASK_ENV=development
+      - MONGO_URI=mongodb+srv://vipul:wgRKSzlrbQg71TTp@cluster0.vlcpt.mongodb.net/appdb?retryWrites=true&w=majority
+    volumes:
+      - ./backend/dev:/app
+    restart: unless-stopped
+
+  backend-prod:
+    build: ./backend/prod
+    ports:
+      - "3002:3002"
+    environment:
+      - FLASK_ENV=production
+      - MONGO_URI=mongodb+srv://vipul:wgRKSzlrbQg71TTp@cluster0.vlcpt.mongodb.net/appdb?retryWrites=true&w=majority
+    restart: unless-stopped
